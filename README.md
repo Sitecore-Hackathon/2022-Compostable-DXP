@@ -71,12 +71,11 @@ Docker
  
 f. ex. 
 -->
-1. Start docker environment using `.\Start-Hackathon.ps1`
-2. Open solution in Visual Studio and run build
-3. Use the Sitecore Installation wizard to install the [package](#link-to-package)
-4. Run the command `dotnet sitecore plugin init`
-5. ...
-6. profit
+1. Open up an elevated Terminal at the root of the project directory
+2. Add your Sitecore license file to `.\docker\License`
+3. Start docker environment using `.\Start-Hackathon.ps1`
+4. Run the comman `dotnet sitecore plugin init`
+5. Run login to Sitecore using the CLI `dotnet sitecore login --authority https://id.compostabledxp.localhost --cm https://cm.compostabledxp.localhost --allow-write true`
 
 ### Configuration
 <!--
