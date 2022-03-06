@@ -21,7 +21,8 @@ You can find a very good reference to Github flavoured markdown reference in [th
 ⟹ Extend the Sitecore Command Line Interface (CLI) plugin
 
 ## Description
-⟹The purpose of our module is fun! Our end goal was simply to get anything at all running as a CLI plugin.
+⟹ The primary purpose of our hackathon entry was to serve as proof-of-concept for creating a Sitecore CLI plugin. We decided to choose this Hackathon idea because documentation on this process does not exist today. We hope that our submission will serve to inspire future Sitecore developers to extend the Sitecore CLI in more creative ways.
+
 <!--
 ⟹ Write a clear description of your hackathon entry.  
 
@@ -110,20 +111,19 @@ In order to make use of the plugin, you will first want to open your terminal an
 The Primo CLI plugin includes a `primo` command that allows developers to print hackathon ASCII art.
 It also contains a visually enhanced version of the `index` command. Specifically, the `rebuild` subcommand has been visually enhanced.
 
-> Note: You should not have the `Sitecore.DevEx.Extensibility.Indexing` plugin installed alongside of the Primo CLI plugin or you will receive errors.
-
 To install the Primo CLI plugin, run the following code:
 
 `dotnet sitecore plugin add -n Primo.DevEx.Extensibility.Hackathon --version 1.0.0`
-`dotnet sitecore plugin add -n Primo.DevEx.Extensibility.Indexing --version 1.0.0`
 
+`dotnet sitecore plugin add -n Primo.DevEx.Extensibility.Indexing --version 1.0.0`
 
 ### Usage
 The Primo CLI plugin `primo` command is initiated within the Sitecore CLI by using the following:
-> dotnet sitecore primo [options] [subcommand] [options] [Arguement]
+`dotnet sitecore primo [options] [subcommand] [options] [Arguement]`
 
 ### Subcommands
 You can use the following subcommands:
+
 | Subcommand | Description |
 |-------|----------|
 | hello | Prints text to the console. |
@@ -152,34 +152,41 @@ The following are examples of using the `hello` command to print message text.
 
 | Command | Description |
 |-------|----------|
-| `dotnet sitecore hello --message 'Hackathon for the win!' --style wordart` | Prints the text `Hackathon for the win!` to the console in a wordart style. |
+| `dotnet sitecore hello --message 'Buonanotte!' --style wordart` | Prints the text `Buonanotte!` to the console in a wordart style. |
 
-The following are examples of using the `hello` command to print Hackathaon ASCII art.
+> **Output:** ![wordart.png](wordart.png)
+
+The following are examples of using the `hello` command to print Hackathon ASCII art.
 
 | Command | Description |
 |-------|----------|
 | `dotnet sitecore hello --message 'Sitecore Hackathon'` | Prints Hackathon ASCII art to the console. Try it and see how much fun it is! |
 
+> **Output:** ![hackathon_ascii_art.png](hackathon_ascii_art.png)
+
 ### Usage
-The Primo CLI plugin includes an `index` command as well. This command automates indexing operations.
+The Primo CLI plugin includes a `primo-index` command as well. This command automates indexing operations.
 
-The Primo CLI plugin `index` command is initiated within the Sitecore CLI by using the following:
-> dotnet sitecore index [subcommand] [options]
+The Primo CLI plugin `primo-index` command is initiated within the Sitecore CLI by using the following:
+`dotnet sitecore primo-index [subcommand] [options]`
 
-> Note: Unless otherwise specified below the functionality of the `index` command matches that found at [The CLI index command](https://doc.sitecore.com/xp/en/developers/101/developer-tools/the-cli-index-command.html).
+> **Note:** Unless otherwise specified below the functionality of the `primo-index` command matches the documentation for the `index` command found at [The CLI index command](https://doc.sitecore.com/xp/en/developers/101/developer-tools/the-cli-index-command.html).
 
-You will need to authenticate against a Sitecore environment. The provided Docker package includes on at https://MISSING
+You will need to authenticate against a Sitecore environment. The provided Docker package includes one at [https://compostabledxp.localhost](https://compostabledxp.localhost)
 
 You can authenticate to this environment by using the following code:
-`dotnet sitecore login --authority https://<Sitecore identity server> --cm http://<Sitecore instance> --allow-write true`
+`dotnet sitecore login --authority [https://id.compostabledxp.localhost](https://id.compostabledxp.localhost/) --cm [https://cm.compostabledxp.localhost](https://cm.compostabledxp.localhost/) --allow-write true`
 
-> Note: You can follow the documentation at [Log in to a Sitecore instance with Sitecore Command Line Interface](https://doc.sitecore.com/xp/en/developers/101/developer-tools/log-in-to-a-sitecore-instance-with-sitecore-command-line-interface.html)
+> **Note:** You can follow the documentation at [Log in to a Sitecore instance with Sitecore Command Line Interface](https://doc.sitecore.com/xp/en/developers/101/developer-tools/log-in-to-a-sitecore-instance-with-sitecore-command-line-interface.html) to login to Sitecore via the 
 
 ### Subcommands
 The following subcommands have been altered:
+
 | Subcommand | Description |
 |-------|----------|
-| rebuild | Rebuilds all the indexes.<br/>`Now: Displays the results in a table that is updated asynchronously while the process is working.` |
+| rebuild | Rebuilds all the indexes.<br/><br/>**Now:** Displays the results in a table that is updated asynchronously while the process is working.` |
+
+![rebuild_table.png](rebuild_table.png)
 
 ## Comments
 <!--
