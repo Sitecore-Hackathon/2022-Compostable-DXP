@@ -41,6 +41,8 @@ _You can alternately paste a [link here](#docs) to a document within this repo c
 
 ⟹ [Replace this Video link](video/GMT20220306-004826_Recording_1628x966.mp4)
 
+[https://youtu.be/KLTDLgpDS9A]Youtube Video
+
 ## Pre-requisites and Dependencies
 <!--
 ⟹ Does your module rely on other Sitecore modules or frameworks?
