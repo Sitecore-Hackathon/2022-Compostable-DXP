@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+      <IgnoreSCQM>true</IgnoreSCQM>
+      <TargetFramework>netcoreapp3.1</TargetFramework>
+      <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+      <NeutralLanguage>en</NeutralLanguage>
+      <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+      <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+      <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+      <IncludeBuildOutput>false</IncludeBuildOutput>
+      <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+      <Configurations>Debug;Release;Escrow</Configurations>
+      <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);CustomBuildOutputTarget</TargetsForTfmSpecificContentInPackage>
+      <NoWarn>$(NoWarn);NU5100</NoWarn>
+      <AssemblyName>Primo.DevEx.Extensibility.Indexing</AssemblyName>
+      <RootNamespace>Primo.DevEx.Extensibility.Indexing</RootNamespace>
+      <OutputType>Library</OutputType>
+  </PropertyGroup>
+    <ItemGroup>
+        <Compile Remove="bin\**" />
+        <EmbeddedResource Remove="bin\**" />
+        <None Remove="bin\**" />
+    </ItemGroup>
+
+    
+
+    <ItemGroup>
+      <PackageReference Include="GraphQL.Client" Version="3.2.4" />
+      <PackageReference Include="GraphQL.Client.Serializer.Newtonsoft" Version="3.2.4" />
+      <PackageReference Include="Microsoft.Extensions.Http" Version="2.1.1" />
+      <PackageReference Include="Microsoft.Extensions.Logging" Version="2.1.1" />
+      <PackageReference Include="Sitecore.Devex.Client.Cli.Extensibility" Version="3.0.0" />
+      <PackageReference Include="Sitecore.DevEx.Indexing.Client" Version="4.1.0" />
+      <PackageReference Include="Sitecore.DevEx.Serialization" Version="4.1.0" />
+      <PackageReference Include="Sitecore.DevEx.Serialization.Client" Version="4.1.0" />
+      <PackageReference Include="Spectre.Console" Version="0.43.0" />
+    </ItemGroup>
+
+    <Target Name="CustomBuildOutputTarget">
+        <ItemGroup>
+            <!--Include library references needed for the plugin and place in plugin folder -->
+            <TfmSpecificPackageFile Include="$(OutputPath)Primo.DevEx.Extensibility.Indexing.dll" PackagePath="plugin" />
+            <TfmSpecificPackageFile Include="$(OutputPath)Sitecore.DevEx.Indexing.Client.dll" PackagePath="plugin" />
+            <TfmSpecificPackageFile Include="$(OutputPath)Sitecore.DevEx.Serialization.Client.dll" PackagePath="plugin" />
+            <TfmSpecificPackageFile Include="$(OutputPath)Sitecore.DevEx.Serialization.dll" PackagePath="plugin" />
+            <TfmSpecificPackageFile Include="$(OutputPath)Microsoft.Extensions.Http.dll" PackagePath="plugin" />
+            <!--Spectre CLI support-->
+            <TfmSpecificPackageFile Include="$(OutputPath)Spectre.Console.dll" PackagePath="plugin" />
+            <!--GraphQL Client support-->
+            
+
+        </ItemGroup>
+    </Target>
+
+</Project>

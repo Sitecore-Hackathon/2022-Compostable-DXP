@@ -1,0 +1,74 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<IgnoreSCQM>true</IgnoreSCQM>
+		<TargetFramework>netcoreapp3.1</TargetFramework>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<NeutralLanguage>en</NeutralLanguage>
+		<SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<Configurations>Debug;Release;Escrow</Configurations>
+		<TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);CustomBuildOutputTarget</TargetsForTfmSpecificContentInPackage>
+		<NoWarn>$(NoWarn);NU5100</NoWarn>
+		<AssemblyName>Primo.DevEx.Extensibility.Hackathon</AssemblyName>
+		<RootNamespace>Primo.DevEx.Extensibility.Hackathon</RootNamespace>
+		<OutputType>Library</OutputType>
+	</PropertyGroup>
+	<ItemGroup>
+	  <Compile Remove="bin\**" />
+	  <EmbeddedResource Remove="bin\**" />
+	  <None Remove="bin\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="GraphQL.Client" Version="3.2.4" />
+		<PackageReference Include="GraphQL.Client.Serializer.Newtonsoft" Version="3.2.4" />
+		<PackageReference Include="Microsoft.Extensions.Http" Version="2.1.1" />
+		<PackageReference Include="Microsoft.Extensions.Logging" Version="2.1.1" />
+		<PackageReference Include="Sitecore.Devex.Client.Cli.Extensibility" Version="3.0.0" />
+		<PackageReference Include="Spectre.Console" Version="0.43.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="CommonResources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>CommonResources.resx</DependentUpon>
+	  </Compile>
+	  <Compile Update="HelloWorld\Data\HelloWorldResources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>HelloWorldResources.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="CommonResources.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>CommonResources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="HelloWorld\Data\HelloWorldResources.resx">
+	    <Generator>PublicResXFileCodeGenerator</Generator>
+	    <LastGenOutput>HelloWorldResources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	</ItemGroup>
+
+	<Target Name="CustomBuildOutputTarget">
+		<ItemGroup>
+			<!--Include library references needed for the plugin and place in plugin folder -->
+			<TfmSpecificPackageFile Include="$(OutputPath)Primo.DevEx.Extensibility.Hackathon.dll" PackagePath="plugin" />
+			<TfmSpecificPackageFile Include="$(OutputPath)Microsoft.Extensions.Http.dll" PackagePath="plugin" />
+			<!--Spectre CLI support-->
+			<TfmSpecificPackageFile Include="$(OutputPath)Spectre.Console.dll" PackagePath="plugin" />			
+			<!--GraphQL Client support-->
+			<TfmSpecificPackageFile Include="$(OutputPath)GraphQL.Client.dll" PackagePath="plugin" />
+			<TfmSpecificPackageFile Include="$(OutputPath)GraphQL.Client.Serializer.Newtonsoft.dll" PackagePath="plugin" />
+			<TfmSpecificPackageFile Include="$(OutputPath)GraphQL.Primitives.dll" PackagePath="plugin" />
+			<TfmSpecificPackageFile Include="$(OutputPath)GraphQL.Client.Abstractions.dll" PackagePath="plugin" />
+			<TfmSpecificPackageFile Include="$(OutputPath)GraphQL.Client.Abstractions.Websocket.dll" PackagePath="plugin" />
+		</ItemGroup>
+	</Target>
+	
+</Project>

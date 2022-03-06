@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution", "_Solution", "{ADCA10F7-A1D2-407B-8074-60418168C02E}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		Docker.pubxml = Docker.pubxml
+		nuget.config = nuget.config
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Docker", "_Docker", "{7A261AC4-6FD2-4E54-9DBE-82D78601A150}"
+	ProjectSection(SolutionItems) = preProject
+		docker\.env = docker\.env
+		docker\docker-compose.override.yml = docker\docker-compose.override.yml
+		docker\docker-compose.yml = docker\docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Primo.DevEx.Extensibility.Hackathon", "src\Primo.DevEx.Extensibility.Plugin\Primo.DevEx.Extensibility.Hackathon.csproj", "{BE4510BD-DD78-4D49-9B11-9A20C6C0118F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Primo.DevEx.Extensibility.Indexing", "src\Primo.DevEx.Extensibility.Indexing\Primo.DevEx.Extensibility.Indexing.csproj", "{CE4E2473-0FCC-4C6F-80D2-04B07B683D59}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Escrow|Any CPU = Escrow|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE4510BD-DD78-4D49-9B11-9A20C6C0118F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE4510BD-DD78-4D49-9B11-9A20C6C0118F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE4510BD-DD78-4D49-9B11-9A20C6C0118F}.Escrow|Any CPU.ActiveCfg = Escrow|Any CPU
+		{BE4510BD-DD78-4D49-9B11-9A20C6C0118F}.Escrow|Any CPU.Build.0 = Escrow|Any CPU
+		{BE4510BD-DD78-4D49-9B11-9A20C6C0118F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE4510BD-DD78-4D49-9B11-9A20C6C0118F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE4E2473-0FCC-4C6F-80D2-04B07B683D59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE4E2473-0FCC-4C6F-80D2-04B07B683D59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE4E2473-0FCC-4C6F-80D2-04B07B683D59}.Escrow|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE4E2473-0FCC-4C6F-80D2-04B07B683D59}.Escrow|Any CPU.Build.0 = Debug|Any CPU
+		{CE4E2473-0FCC-4C6F-80D2-04B07B683D59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE4E2473-0FCC-4C6F-80D2-04B07B683D59}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {311DA37D-528B-43B2-A99B-E7253F841D46}
+	EndGlobalSection
+EndGlobal

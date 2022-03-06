@@ -5,12 +5,15 @@
   ],
   "plugins": [
     "Sitecore.DevEx.Extensibility.Serialization@4.1.1",
-    "Sitecore.DevEx.Extensibility.Publishing@4.1.1"
+    "Sitecore.DevEx.Extensibility.Publishing@4.1.1",
+    "Primo.DevEx.Extensibility.Hackathon@1.0.0",
+    "Primo.DevEx.Extensibility.Indexing@1.0.0"
   ],
   "serialization": {
     "defaultMaxRelativeItemPathLength": 120,
     "defaultModuleRelativeSerializationPath": "items",
     "removeOrphansForRoles": true,
+    "continueOnItemFailure": false,
     "excludedFields": []
   }
 }
