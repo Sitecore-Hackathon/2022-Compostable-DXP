@@ -39,7 +39,7 @@ _You can alternately paste a [link here](#docs) to a document within this repo c
 ⟹ Provide a video highlighing your Hackathon module submission and provide a link to the video. You can use any video hosting, file share or even upload the video to this repository. _Just remember to update the link below_
 -->
 
-⟹ [Replace this Video link](#video-link)
+⟹ [Replace this Video link](video/GMT20220306-004826_Recording_1628x966.mp4)
 
 ## Pre-requisites and Dependencies
 <!--
